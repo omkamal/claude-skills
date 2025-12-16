@@ -1,0 +1,22 @@
+{
+  "name": "claude-skills",
+  "metadata": {
+    "description": "Custom skills for Claude Code",
+    "version": "1.0.0"
+  },
+  "owner": {
+    "name": "Omar Kamal Hosney"
+  },
+  "plugins": [
+    {
+      "name": "nano-banana-illustrator",
+      "source": "./skills/nano-banana-illustrator",
+      "description": "Generate images using Google's Gemini Image API. Supports pro and flash models with multiple aspect ratios.",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "keywords": ["image", "generation", "gemini", "ai", "illustration"],
+      "category": "creative",
+      "strict": false
+    }
+  ]
+}
