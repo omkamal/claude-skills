@@ -9,7 +9,7 @@ A collection of custom skills for Claude Code that extend its capabilities with 
 Add this repository as a Claude Code plugin marketplace:
 
 ```bash
-/plugin marketplace add anthropics/claude-skills
+/plugin marketplace add omkamal/claude-skills
 ```
 
 Then install skills interactively:
