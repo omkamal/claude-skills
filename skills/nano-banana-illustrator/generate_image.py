@@ -69,7 +69,7 @@ def generate_image(
         contents=contents,
         config=types.GenerateContentConfig(
             response_modalities=["IMAGE", "TEXT"],
-            image_generation_config=types.ImageGenerationConfig(aspect_ratio=ar),
+            image_generation_config={"aspect_ratio": ar},
         ),
     )
     
