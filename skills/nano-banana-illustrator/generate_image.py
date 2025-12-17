@@ -3,7 +3,6 @@
 
 import os
 import sys
-import base64
 import argparse
 from pathlib import Path
 
@@ -32,7 +31,7 @@ ASPECT_RATIOS = {
 
 def generate_image(
     prompt: str,
-    output_path: str = "generated_image.png",
+    output_path: str = "generated_image.jpg",
     model: str = "pro",
     input_images: list[str] = None,
     aspect_ratio: str = "landscape",
@@ -76,9 +75,9 @@ def generate_image(
     # Extract and save image
     for part in response.candidates[0].content.parts:
         if part.inline_data is not None:
-            img_data = base64.b64decode(part.inline_data.data)
+            # Data is already raw binary from Gemini API, no decode needed
             output = Path(output_path)
-            output.write_bytes(img_data)
+            output.write_bytes(part.inline_data.data)
             return str(output.absolute())
     
     raise RuntimeError("No image generated in response")
@@ -87,7 +86,7 @@ def generate_image(
 def main():
     parser = argparse.ArgumentParser(description="Generate images with Nano Banana API")
     parser.add_argument("prompt", help="Text prompt for image generation")
-    parser.add_argument("-o", "--output", default="generated_image.png", help="Output path")
+    parser.add_argument("-o", "--output", default="generated_image.jpg", help="Output path")
     parser.add_argument("-m", "--model", choices=["pro", "flash"], default="pro",
                         help="Model: 'pro' (high quality, default) or 'flash' (fast)")
     parser.add_argument("-a", "--aspect", default="landscape",

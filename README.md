@@ -85,13 +85,13 @@ export GOOGLE_API_KEY=your_api_key_here
 **CLI Usage:**
 ```bash
 # Basic generation
-python generate_image.py "A sunset over mountains" -o sunset.png
+python generate_image.py "A sunset over mountains" -o sunset.jpg
 
 # Portrait mode with flash model
-python generate_image.py "A robot" -o robot.png -a portrait -m flash
+python generate_image.py "A robot" -o robot.jpg -a portrait -m flash
 
 # With reference image
-python generate_image.py "Make this image more colorful" -i reference.jpg -o output.png
+python generate_image.py "Make this image more colorful" -i reference.jpg -o output.jpg
 ```
 
 **In Claude Code:**

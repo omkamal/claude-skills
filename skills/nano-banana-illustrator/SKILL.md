@@ -15,8 +15,8 @@ export GOOGLE_API_KEY=your_key_here
 
 ## Usage
 ```bash
-python generate_image.py "A sunset over mountains" -o sunset.png
-python generate_image.py "A robot" -o robot.png -a portrait -m flash
+python generate_image.py "A sunset over mountains" -o sunset.jpg
+python generate_image.py "A robot" -o robot.jpg -a portrait -m flash
 ```
 
 ## Models
